@@ -40,7 +40,7 @@ def train():
             optimizer.zero_grad()
             outputs = model(images)
             
-            # 计算损失
+           
             input_lengths = torch.full((outputs.size(0),), outputs.size(1), dtype=torch.long)
             loss = criterion(outputs, targets, input_lengths, target_lengths)
             
@@ -58,12 +58,12 @@ def train():
         print(f'Epoch [{epoch+1}/{num_epochs}], Average Loss: {avg_loss:.4f}, '
               f'Time: {epoch_time:.2f}s')
         
-        # 保存模型
+        
         if not os.path.exists('checkpoints'):
             os.makedirs('checkpoints')
         torch.save(model.state_dict(), f'checkpoints/model_epoch_{epoch+1}.pth')
 
 if __name__ == '__main__':
-    print("开始训练...")
+    print("학습을 시작합니다...")
     train()
-    print("训练完成！") 
+    print("학습이 완료되었습니다！") 
