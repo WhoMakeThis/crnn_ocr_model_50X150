@@ -1,0 +1,1 @@
+# crnn_ocr_model_50X150
